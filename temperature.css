@@ -1,0 +1,174 @@
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0a0f16 0%, #111927 40%, #0d111a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Top-right View Data button */
+.view-data-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  padding: 11px 26px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #d9f7ff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(120, 255, 255, 0.25);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0, 255, 255, 0.18);
+  z-index: 1000;
+}
+
+.view-data-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(120, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(120, 255, 255, 0.28);
+  border-color: rgba(150, 255, 255, 0.45);
+}
+
+/* Wrapper for side-by-side cards */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Glass card styling */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 50px 70px;
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 1.2s ease forwards;
+  transform: translateY(10px);
+}
+
+/* Temperature icon */
+.temp-icon {
+  width: 75px;
+  height: 140px;
+  margin: 0 auto 22px;
+  position: relative;
+}
+
+.temp-icon .circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.temp-icon .bar {
+  width: 26px;
+  height: 90px;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* NTC specific styling - BLUE THEME */
+.ntc-card .circle {
+  background: radial-gradient(circle, #a7d8ff, #1a73ff);
+  box-shadow: 0 8px 22px rgba(30, 144, 255, 0.45);
+}
+
+.ntc-card .bar {
+  background: linear-gradient(180deg, #d6ecff, #1a73ff);
+  box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4);
+}
+
+/* PTC specific styling - RED THEME */
+.ptc-card .circle {
+  background: radial-gradient(circle, #ffb0b0, #ff3b3b);
+  box-shadow: 0 8px 22px rgba(255, 60, 60, 0.45);
+}
+
+.ptc-card .bar {
+  background: linear-gradient(180deg, #ffe0e0, #ff3b3b);
+  box-shadow: 0 6px 20px rgba(255, 60, 60, 0.4);
+}
+
+
+/* Temperature text */
+.temp-value {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #d9ffdf;
+  letter-spacing: -1px;
+}
+
+.temp-label {
+  font-size: 1rem;
+  margin-top: 6px;
+  color: #8fbf93;
+}
+
+/* Log buttons */
+.log-btn1, .log-btn2 {
+  margin-top: 40px;
+  padding: 12px 34px;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(135deg, #25c06a, #159e51);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 8px 20px rgba(22, 255, 128, 0.25);
+}
+
+.log-btn1:hover, .log-btn2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(22, 255, 128, 0.35);
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .glass-card {
+    padding: 40px 50px;
+  }
+  
+  .temp-value {
+    font-size: 2.4rem;
+  }
+}

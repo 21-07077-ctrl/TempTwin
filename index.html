@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temperature</title>
+  <link rel="stylesheet" href="temperature.css" />
+</head>
+
+<body>
+
+  <button class="view-data-btn" onclick="window.location.href='view.html'">View Data</button>
+
+  <div class="wrapper">
+
+    <!-- NTC Card -->
+    <div class="glass-card ntc-card">
+      <div class="temp-icon">
+        <div class="circle"></div>
+        <div class="bar"></div>
+      </div>
+      <h1 class="temp-value ntc-temp">--°C</h1>
+      <p class="temp-label">NTC</p>
+      <button class="log-btn1">Log Data</button>
+    </div>
+
+    <!-- PTC Card -->
+    <div class="glass-card ptc-card">
+      <div class="temp-icon">
+        <div class="circle"></div>
+        <div class="bar"></div>
+      </div>
+      <h1 class="temp-value ptc-temp">--°C</h1>
+      <p class="temp-label">PTC</p>
+      <button class="log-btn2">Log Data</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="temperature.js"></script>
+
+</body>
+
+</html>

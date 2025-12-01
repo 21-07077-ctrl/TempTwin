@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temperature Logs Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="view.css" />
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button id="backBtn">← Back</button>
+
+  <h2>Temperature Logs Viewer</h2>
+
+  <label>Select Date:</label>
+  <input type="date" id="datePicker" />
+
+  <button id="loadBtn">Load Data</button>
+
+  <h3>NTC Temperature</h3>
+  <canvas id="ntcChart" height="120"></canvas>
+
+  <h3>PTC Temperature</h3>
+  <canvas id="ptcChart" height="120"></canvas>
+
+  <script type="module" src="view.js"></script>
+  <script>
+    const backBtn = document.getElementById("backBtn");
+
+    backBtn.addEventListener("click", () => {
+      // Go back to the previous page if available
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        // If no referrer (user opened page directly), redirect to home page
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
